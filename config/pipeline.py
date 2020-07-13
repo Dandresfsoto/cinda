@@ -27,13 +27,8 @@ def save_profile_picture(backend, user, response, details, is_new=False, *args, 
             user.save()
 
     if isinstance(backend, GoogleOAuth2):
-        if response.get('image') and response['image'].get('url'):
-            url = response['image'].get('url')
-            u = urlparse(url)
-            query = parse_qs(u.query)
-            query.pop('sz', None)
-            u = u._replace(query=urlencode(query, True))
-            url = urlunparse(u)
+        if response.get('picture'):
+            url = response.get('picture')
             avatar = urlopen(url)
             user.photo.save(slugify(str(user.id)) + '.jpg',
                             ContentFile(avatar.read()))

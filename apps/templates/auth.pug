@@ -52,16 +52,15 @@ block body_content
                     li(class="dropdown navbar-user")
                         a(href="#",class="dropdown-toggle",data-toggle="dropdown")
 
-                            div(class="image")
-                                |{% if user.url_photo == None %}
-                                img(src="{% static 'assets/css/google/images/user.png'%}")
-                                |{% else %}
-                                img(src="{{ user.url_photo }}")
-                                |{% endif %}
+                            |{% if user.url_photo == None %}
+                            img(src="{% static 'assets/css/google/images/user.png'%}")
+                            |{% else %}
+                            img(src="{{ user.url_photo }}")
+                            |{% endif %}
 
 
                             span(class="d-none d-md-inline") {{ user.first_name }}
-                                b(class="caret ml-2")
+                            b(class="caret ml-1")
 
                         div(class="dropdown-menu dropdown-menu-right")
                             a(href="{% url 'logout' %}",class="dropdown-item") Cerrar sesión
