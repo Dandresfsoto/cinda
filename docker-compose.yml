@@ -34,9 +34,11 @@ services:
     volumes:
       - static_volume:/app/staticfiles
       - ./media:/app/media
+      - ./data/certs:/etc/nginx/certs
     build:
       context: ./compose/production/nginx
     ports:
+      - "443:443"
       - "80:80"
 
   daphne:
