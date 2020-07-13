@@ -53,7 +53,11 @@ block body_content
                         a(href="#",class="dropdown-toggle",data-toggle="dropdown")
 
                             div(class="image")
+                                |{% if user.url_photo == None %}
                                 img(src="{% static 'assets/css/google/images/user.png'%}")
+                                |{% else %}
+                                img(src="{{ user.url_photo }}")
+                                |{% endif %}
 
 
                             span(class="d-none d-md-inline") {{ user.first_name }}
@@ -72,7 +76,11 @@ block body_content
                             a(href="#",data-toggle="nav-profile")
                                 div(class="cover with-shadow")
                                 div(class="image image-icon")
+                                    | {% if user.url_photo == None %}
                                     img(src="{% static 'assets/css/google/images/user.png'%}")
+                                    | {% else %}
+                                    img(src="{{ user.url_photo }}")
+                                    | {% endif %}
                                 div(class="info")
                                     b(class="caret pull-right")
                                     | {{ user.first_name }}
