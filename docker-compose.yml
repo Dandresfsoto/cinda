@@ -33,7 +33,7 @@ services:
       - django
     volumes:
       - static_volume:/app/staticfiles
-      - ./apps/media:/app/media
+      - ./media:/app/media
       - ./data/certs:/etc/nginx/certs
     build:
       context: ./compose/production/nginx
