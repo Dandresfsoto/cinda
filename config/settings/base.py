@@ -160,6 +160,9 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+SOCIAL_AUTH_REDIRECT_IS_HTTPS = True
+SOCIAL_AUTH_SANITIZE_REDIRECTS = True
+
 SOCIAL_AUTH_USER_FIELDS = ['email', 'first_name', 'last_name', 'password']
 SOCIAL_AUTH_LOGIN_REDIRECT_URL = 'index'
 
