@@ -1,0 +1,26 @@
+extends ../generic_auth
+
+- load static
+
+
+block head_content
+    style.
+        img{
+            vertical-align: middle;
+            border-style: none;
+            max-width: 100%;
+            height: auto;
+            margin-left: auto!important;
+            margin-right: auto !important;
+            display: block!important;
+        }
+
+block content_generic_auth
+    h1(class="text-center") {{ comunidad.nombre }}
+    div(class="mt-5")
+        img(src="{{ comunidad.photo.url }}", class="img-fluid mx-auto d-block")
+        |{{ comunidad.get_html|safe }}
+
+
+
+block generic_auth_script

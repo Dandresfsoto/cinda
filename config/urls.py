@@ -27,6 +27,8 @@ urlpatterns = [
     path('dashboard/', Index.as_view(), name='index'),
     path('admin/', admin.site.urls),
     path('dashboard/usuarios/', include('apps.users.urls', namespace='users')),
+    path('dashboard/comunidades/', include('apps.comunidades.urls', namespace='comunidades')),
+    path('markdownx/', include('markdownx.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 if settings.DEBUG:

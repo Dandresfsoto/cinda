@@ -14,8 +14,16 @@ class UsersConfig(AppConfig):
         }
         self.menu = [
             {
+                'name': 'Cuentas',
+                'permiso': 'users.cuentas.ver',
+                'url': reverse('users:lista_cuentas'),
+                'status': '',
+                'other_urls': [],
+                'submenu': []
+            },
+            {
                 'name': 'Roles',
-                'permiso': 'users.roles',
+                'permiso': 'users.roles.ver',
                 'url': reverse('users:lista_roles'),
                 'status': '',
                 'other_urls': [
@@ -27,7 +35,7 @@ class UsersConfig(AppConfig):
             },
             {
                 'name': 'Permisos',
-                'permiso': 'users.permisos',
+                'permiso': 'users.permisos.ver',
                 'url': reverse('users:lista_permisos'),
                 'other_urls': [
                     'users:crear_permisos',
@@ -41,6 +49,12 @@ class UsersConfig(AppConfig):
 
     def get_permissions_list(self):
         lista_permisos = [
+
+            'cuentas.ver',
+            'cuentas.crear',
+            'cuentas.editar',
+            'cuentas.eliminar',
+
             'permisos.ver',
             'permisos.crear',
             'permisos.editar',
@@ -54,6 +68,33 @@ class UsersConfig(AppConfig):
 
     def get_permissions_dict(self):
         lista_roles = [
+            {
+                'name': 'Usuarios, ver cuentas',
+                'permisos': {
+                    'cuentas.ver'
+                }
+            },
+            {
+                'name': 'Usuarios, crear cuentas',
+                'permisos': {
+                    'cuentas.ver',
+                    'cuentas.crear'
+                }
+            },
+            {
+                'name': 'Usuarios, editar cuentas',
+                'permisos': {
+                    'cuentas.ver',
+                    'cuentas.editar'
+                }
+            },
+            {
+                'name': 'Usuarios, eliminar cuentas',
+                'permisos': {
+                    'cuentas.ver',
+                    'cuentas.eliminar'
+                }
+            },
             {
                 'name': 'Usuarios, ver permisos',
                 'permisos': {

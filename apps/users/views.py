@@ -10,6 +10,27 @@ from django.contrib.auth.models import Permission, Group
 from .forms import PermissionForm, PermisoDeleteForm, RoleForm, RoleDeleteForm
 
 
+class ListaCuentas(LoginRequiredMixin, MultiplePermissionsRequiredMixin, TemplateView):
+    template_name = 'usuarios/cuentas/lista.pug'
+    login_url = settings.LOGIN_URL
+    permissions = {
+        "all": [
+            "users.cuentas.ver"
+        ]
+    }
+
+    def get_context_data(self, **kwargs):
+        kwargs['title'] = 'Cuentas del sistema'
+        kwargs['title_panel'] = 'Listado de cuentas'
+        kwargs['breadcrumbs'] = convert_dict_breadcrums([
+            ('Inicio', reverse('index')),
+            ('Usuarios', '#'),
+            ('Cuentas', '#'),
+        ])
+        kwargs['url_datatable'] = reverse('users:rest:lista_cuentas')
+        return super(ListaCuentas,self).get_context_data(**kwargs)
+
+
 class ListaRoles(LoginRequiredMixin, MultiplePermissionsRequiredMixin, TemplateView):
     template_name = 'usuarios/roles/lista.pug'
     login_url = settings.LOGIN_URL

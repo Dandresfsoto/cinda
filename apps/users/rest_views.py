@@ -5,6 +5,48 @@ from django.db.models import Q
 from django.contrib.auth.models import Permission, Group
 from django.contrib.contenttypes.models import ContentType
 from apps.utils import render_column_utils
+from apps.users.models import User
+
+
+class CuentasListApi(MultiplePermissionsRequiredMixin, BaseDatatableView):
+    model = User
+    columns = ['email', 'first_name']
+    order_columns = ['email', 'first_name']
+    permissions = {
+        "all": [
+            "users.cuentas"
+        ],
+        "editar": [
+            "users.cuentas",
+            "users.cuentas.editar",
+        ],
+        "eliminar": [
+            "users.cuentas",
+            "users.cuentas.eliminar",
+        ]
+    }
+
+
+    def filter_queryset(self, qs):
+        search = self.request.GET.get(u'search[value]', None)
+        if search:
+            q = Q(email__icontains=search) | Q(first_name__icontains=search) | Q(last_name__icontains=search)
+            qs = qs.filter(q)
+        return qs
+
+    def render_column(self, row, column):
+        if column == 'id':
+            permiso = self.request.user.has_perms(self.permissions.get('editar'))
+            url = f'editar/{row.id}'
+            data_placement = 'right'
+            title = f'Editar cuenta: {row.email}'
+            return render_column_utils.edit_button(permiso=permiso, url=url, data_placement=data_placement, title=title)
+
+        elif column == 'first_name':
+            return row.get_full_name()
+
+        else:
+            return super(CuentasListApi, self).render_column(row, column)
 
 
 class PermisosListApi(MultiplePermissionsRequiredMixin, BaseDatatableView):

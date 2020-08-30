@@ -1,10 +1,12 @@
 from django.urls import path, include
 from .views import ListaPermisos, CreatePermisos, UpdatePermisos, DeletePermisos, ListaRoles, CreateRoles, UpdateRoles, \
-    DeleteRoles
+    DeleteRoles, ListaCuentas
 
 app_name = 'users'
 
 urlpatterns = [
+
+    path('cuentas/', ListaCuentas.as_view(), name='lista_cuentas'),
 
     path('roles/', ListaRoles.as_view(), name='lista_roles'),
     path('roles/crear/', CreateRoles.as_view(), name='crear_roles'),

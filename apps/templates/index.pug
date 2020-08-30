@@ -3,6 +3,25 @@ extends generic_auth
 - load static
 
 block content_generic_auth
+    | {% if options %}
+
+    div(class="m-b-20")
+        a(href="{{crear_comunidad}}")
+            button(type="button",class="btn btn-success") Agregar comunidad
+
+    | {% endif %}
+    div(class="container-fluid content-row")
+        div(class="row")
+            |{% for comunidad in comunidades %}
+            div(class="col-sm-12 col-md-6 col-xl-3")
+                div(class="card h-100", style="h")
+                    img(class="card-img-top", src="{{ comunidad.photo.url }}")
+                    div(class="card-body")
+                        h5(class="card-title mt-0") {{ comunidad.nombre }}
+                        p(class="card-text f-s-13") {{ comunidad.descripcion }}
+                        a(href="{% url 'comunidades:ver_comunidad' pk=comunidad.id %}", class="btn btn-sm btn-default") Ver
+                        a(href="{% url 'comunidades:editar_comunidad' pk=comunidad.id %}", class="btn btn-sm btn-default ml-2") Editar
+            |{% endfor %}
+
 
 block generic_auth_script
-    script(src="{% static 'assets/js/templates/dist/index.js'%}")

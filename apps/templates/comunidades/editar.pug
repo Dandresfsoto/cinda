@@ -1,0 +1,62 @@
+extends ../generic_auth
+
+- load static
+- load crispy_forms_tags
+
+block head_content
+    link(href="https://unpkg.com/v-markdown-editor/dist/v-markdown-editor.css", rel="stylesheet")
+
+
+block content_generic_auth
+    div(class="panel panel-primary")
+        div(class="panel-heading")
+            h4(class="panel-title") {{ title_panel }}
+            div(class="panel-heading-btn")
+                a(href="javascript:;",class="btn btn-xs btn-icon btn-circle btn-default",data-click="panel-expand")
+                    i(class="fa fa-expand")
+                a(href="javascript:;",class="btn btn-xs btn-icon btn-circle btn-success",data-click="panel-reload",id="reload")
+                    i(class="fa fa-redo")
+                a(href="javascript:;",class="btn btn-xs btn-icon btn-circle btn-warning",data-click="panel-collapse")
+                    i(class="fa fa-minus")
+        div(class="panel-body")
+            | {% verbatim %}
+            div(id="app")
+                |<markdown-editor v-model="value" :options="options" height="62vh"></markdown-editor>
+            | {% endverbatim %}
+            | {% crispy form %}
+
+
+
+block generic_auth_script
+
+    script(src="https://unpkg.com/v-markdown-editor/dist/v-markdown-editor.min.js", type="text/javascript")
+    script.
+        var app = new Vue({
+            el: '#app',
+            data: {
+                value: '',
+                options: {
+                    lineNumbers: true,
+                    styleActiveLine: true,
+                    styleSelectedText: true,
+                    lineWrapping: true,
+                    indentWithTabs: true,
+                    tabSize: 2,
+                    indentUnit: 2
+                }
+            }
+        })
+
+    script.
+        $(document).ready(function () {
+
+            app.value = $("#id_markdown").val();
+
+            $("#id_form").submit(function (event) {
+
+                var data = app.value
+
+                $("#id_markdown").val(data);
+
+            });
+        });

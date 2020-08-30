@@ -10,6 +10,7 @@ from django.contrib import messages
 from apps.users.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import HttpResponseRedirect, reverse, redirect
+from apps.comunidades.models import ComunidadEntry
 
 
 class Login(FormView):
@@ -50,6 +51,12 @@ class Index(LoginRequiredMixin, TemplateView):
 
     template_name = 'index.pug'
     login_url = settings.LOGIN_URL
+    permissions = {
+        "crear": [
+            "users.comunidades.ver",
+            "users.comunidades.crear"
+        ]
+    }
 
     def get_context_data(self, **kwargs):
 
@@ -57,6 +64,9 @@ class Index(LoginRequiredMixin, TemplateView):
         kwargs['breadcrumbs'] = convert_dict_breadcrums([
             ('Inicio', '#')
         ])
+        kwargs['options'] = self.request.user.has_perms(self.permissions.get('crear'))
+        kwargs['crear_comunidad'] = reverse('comunidades:crear_comunidad')
+        kwargs['comunidades'] = ComunidadEntry.objects.all()
         return super(Index, self).get_context_data(**kwargs)
 
 

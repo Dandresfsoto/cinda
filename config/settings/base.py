@@ -43,16 +43,26 @@ THIRD_PARTY_APPS = [
     'crispy_forms',
     'social_django',
     'django_cleanup.apps.CleanupConfig',
+    'markdownx',
+    'rest_framework',
 ]
 
 LOCAL_APPS = [
     'apps.users',
+    'apps.comunidades',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
 SOCIAL_AUTH_POSTGRES_JSONFIELD = True
 
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}
 
 AUTHENTICATION_BACKENDS = [
     'social_core.backends.google.GoogleOAuth2',
@@ -105,10 +115,10 @@ TEMPLATES = [
         'OPTIONS': {
             "loaders": [
                 ("pypugjs.ext.django.Loader",
-                    (
-                     "django.template.loaders.filesystem.Loader",
-                     "django.template.loaders.app_directories.Loader",
-                    ))
+                    [
+                    "django.template.loaders.app_directories.Loader",
+                    "django.template.loaders.filesystem.Loader",
+                    ])
             ],
             'builtins': [
                 'pypugjs.ext.django.templatetags',
