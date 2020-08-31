@@ -15,6 +15,7 @@ class ComunidadEntry(models.Model):
         max_upload_size=1048576
     )
     markdown = models.TextField(blank=True, null=True)
+    tipo = models.CharField(max_length=100, choices=[('AFROS','AFROS'),('INDIGENAS','INDIGENAS')])
     descripcion = models.TextField()
 
     def get_html(self):
