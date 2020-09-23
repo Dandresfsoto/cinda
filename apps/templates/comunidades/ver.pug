@@ -18,7 +18,6 @@ block head_content
 block content_generic_auth
     h1(class="text-center") {{ comunidad.nombre }}
     div(class="mt-5")
-        img(src="{{ comunidad.photo.url }}", class="img-fluid mx-auto d-block")
         |{{ comunidad.get_html|safe }}
 
 

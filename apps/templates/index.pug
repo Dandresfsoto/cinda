@@ -7,12 +7,14 @@ block content_generic_auth
 
     div(class="m-b-20")
         a(href="{{crear_comunidad}}")
-            button(type="button",class="btn btn-success") Agregar comunidad
+            button(type="button",class="btn btn-success") Agregar entrada
 
     | {% endif %}
-    div(class="container-fluid content-row")
+    div(class="container-fluid content-row", style="margin-bottom:20px;")
         div(class="row")
-            |{% for comunidad in comunidades %}
+            div(class="col-sm-12")
+                h3 Comunidades Afro:
+            |{% for comunidad in afros %}
             div(class="col-sm-12 col-md-6 col-xl-3")
                 div(class="card h-100", style="h")
                     img(class="card-img-top", src="{{ comunidad.photo.url }}")
@@ -22,6 +24,96 @@ block content_generic_auth
                         a(href="{% url 'comunidades:ver_comunidad' pk=comunidad.id %}", class="btn btn-sm btn-default") Ver
                         a(href="{% url 'comunidades:editar_comunidad' pk=comunidad.id %}", class="btn btn-sm btn-default ml-2") Editar
             |{% endfor %}
+
+    div(class="container-fluid content-row", style="margin-bottom:20px;")
+        div(class="row")
+            div(class="col-sm-12")
+                h3 Comunidades Indigenas:
+            | {% for comunidad in indigenas %}
+            div(class="col-sm-12 col-md-6 col-xl-3")
+                div(class="card h-100", style="h")
+                    img(class="card-img-top", src="{{ comunidad.photo.url }}")
+                    div(class="card-body")
+                        h5(class="card-title mt-0") {{ comunidad.nombre }}
+                        p(class="card-text f-s-13") {{ comunidad.descripcion }}
+                        a(href="{% url 'comunidades:ver_comunidad' pk=comunidad.id %}", class="btn btn-sm btn-default") Ver
+                        a(href="{% url 'comunidades:editar_comunidad' pk=comunidad.id %}", class="btn btn-sm btn-default ml-2") Editar
+            | {% endfor %}
+
+    div(class="container-fluid content-row", style="margin-bottom:20px;")
+        div(class="row")
+            div(class="col-sm-12")
+                h3 Costumbres:
+            | {% for comunidad in costumbres %}
+            div(class="col-sm-12 col-md-6 col-xl-3")
+                div(class="card h-100", style="h")
+                    img(class="card-img-top", src="{{ comunidad.photo.url }}")
+                    div(class="card-body")
+                        h5(class="card-title mt-0") {{ comunidad.nombre }}
+                        p(class="card-text f-s-13") {{ comunidad.descripcion }}
+                        a(href="{% url 'comunidades:ver_comunidad' pk=comunidad.id %}", class="btn btn-sm btn-default") Ver
+                        a(href="{% url 'comunidades:editar_comunidad' pk=comunidad.id %}", class="btn btn-sm btn-default ml-2") Editar
+            | {% endfor %}
+
+    div(class="container-fluid content-row", style="margin-bottom:20px;")
+        div(class="row")
+            div(class="col-sm-12")
+                h3 Cocina ancestral:
+            | {% for comunidad in cocina %}
+            div(class="col-sm-12 col-md-6 col-xl-3")
+                div(class="card h-100", style="h")
+                    img(class="card-img-top", src="{{ comunidad.photo.url }}")
+                    div(class="card-body")
+                        h5(class="card-title mt-0") {{ comunidad.nombre }}
+                        p(class="card-text f-s-13") {{ comunidad.descripcion }}
+                        a(href="{% url 'comunidades:ver_comunidad' pk=comunidad.id %}", class="btn btn-sm btn-default") Ver
+                        a(href="{% url 'comunidades:editar_comunidad' pk=comunidad.id %}", class="btn btn-sm btn-default ml-2") Editar
+            | {% endfor %}
+
+    div(class="container-fluid content-row", style="margin-bottom:20px;")
+        div(class="row")
+            div(class="col-sm-12")
+                h3 Galeria fotografica:
+            | {% for comunidad in fotos %}
+            div(class="col-sm-12 col-md-6 col-xl-3")
+                div(class="card h-100", style="h")
+                    img(class="card-img-top", src="{{ comunidad.photo.url }}")
+                    div(class="card-body")
+                        h5(class="card-title mt-0") {{ comunidad.nombre }}
+                        p(class="card-text f-s-13") {{ comunidad.descripcion }}
+                        a(href="{% url 'comunidades:ver_comunidad' pk=comunidad.id %}", class="btn btn-sm btn-default") Ver
+                        a(href="{% url 'comunidades:editar_comunidad' pk=comunidad.id %}", class="btn btn-sm btn-default ml-2") Editar
+            | {% endfor %}
+
+    div(class="container-fluid content-row", style="margin-bottom:20px;")
+        div(class="row")
+            div(class="col-sm-12")
+                h3 Bienes y servicios ofrecidos:
+            | {% for comunidad in bienes %}
+            div(class="col-sm-12 col-md-6 col-xl-3")
+                div(class="card h-100", style="h")
+                    img(class="card-img-top", src="{{ comunidad.photo.url }}")
+                    div(class="card-body")
+                        h5(class="card-title mt-0") {{ comunidad.nombre }}
+                        p(class="card-text f-s-13") {{ comunidad.descripcion }}
+                        a(href="{% url 'comunidades:ver_comunidad' pk=comunidad.id %}", class="btn btn-sm btn-default") Ver
+                        a(href="{% url 'comunidades:editar_comunidad' pk=comunidad.id %}", class="btn btn-sm btn-default ml-2") Editar
+            | {% endfor %}
+
+    div(class="container-fluid content-row", style="margin-bottom:20px;")
+        div(class="row")
+            div(class="col-sm-12")
+                h3 Medicina ancestral:
+            | {% for comunidad in medicina %}
+            div(class="col-sm-12 col-md-6 col-xl-3")
+                div(class="card h-100", style="h")
+                    img(class="card-img-top", src="{{ comunidad.photo.url }}")
+                    div(class="card-body")
+                        h5(class="card-title mt-0") {{ comunidad.nombre }}
+                        p(class="card-text f-s-13") {{ comunidad.descripcion }}
+                        a(href="{% url 'comunidades:ver_comunidad' pk=comunidad.id %}", class="btn btn-sm btn-default") Ver
+                        a(href="{% url 'comunidades:editar_comunidad' pk=comunidad.id %}", class="btn btn-sm btn-default ml-2") Editar
+            | {% endfor %}
 
 
 block generic_auth_script

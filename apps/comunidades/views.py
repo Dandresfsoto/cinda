@@ -29,11 +29,11 @@ class CreateComunidades(LoginRequiredMixin,MultiplePermissionsRequiredMixin, Cre
         return reverse('index')
 
     def get_context_data(self, **kwargs):
-        kwargs['title'] = 'Nueva comunidad'
-        kwargs['title_panel'] = 'Agregar comunidad'
+        kwargs['title'] = 'Nueva entrada'
+        kwargs['title_panel'] = 'Agregar entrada'
         kwargs['breadcrumbs'] = convert_dict_breadcrums([
             ('Inicio', reverse('index')),
-            ('Comunidades', '#'),
+            ('Entradas', '#'),
             ('Crear', '#'),
         ])
         return super(CreateComunidades,self).get_context_data(**kwargs)
@@ -56,11 +56,11 @@ class UpdateComunidades(LoginRequiredMixin,MultiplePermissionsRequiredMixin, Upd
         return reverse('index')
 
     def get_context_data(self, **kwargs):
-        kwargs['title'] = 'Editar comunidad'
-        kwargs['title_panel'] = 'Editar comunidad'
+        kwargs['title'] = 'Editar entrada'
+        kwargs['title_panel'] = 'Editar entrada'
         kwargs['breadcrumbs'] = convert_dict_breadcrums([
             ('Inicio', reverse('index')),
-            ('Comunidades', '#'),
+            ('Entradas', '#'),
             ('Editar', '#'),
         ])
         return super(UpdateComunidades,self).get_context_data(**kwargs)

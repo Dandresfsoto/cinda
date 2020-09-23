@@ -66,7 +66,13 @@ class Index(LoginRequiredMixin, TemplateView):
         ])
         kwargs['options'] = self.request.user.has_perms(self.permissions.get('crear'))
         kwargs['crear_comunidad'] = reverse('comunidades:crear_comunidad')
-        kwargs['comunidades'] = ComunidadEntry.objects.all()
+        kwargs['afros'] = ComunidadEntry.objects.filter(tipo='AFROS')
+        kwargs['indigenas'] = ComunidadEntry.objects.filter(tipo='INDIGENAS')
+        kwargs['costumbres'] = ComunidadEntry.objects.filter(tipo='COSTUMBRES')
+        kwargs['cocina'] = ComunidadEntry.objects.filter(tipo='COCINA')
+        kwargs['fotos'] = ComunidadEntry.objects.filter(tipo='FOTOS')
+        kwargs['bienes'] = ComunidadEntry.objects.filter(tipo='BIENES')
+        kwargs['medicina'] = ComunidadEntry.objects.filter(tipo='MEDICINA')
         return super(Index, self).get_context_data(**kwargs)
 
 
@@ -77,4 +83,8 @@ class Landing(TemplateView):
     def get_context_data(self, **kwargs):
 
         kwargs['title'] = 'CINDA'
+        kwargs['usuarios_registrados'] = User.objects.all().count()
+        kwargs['entradas'] = ComunidadEntry.objects.all().count()
+        kwargs['servicios_ofrecidos'] = ComunidadEntry.objects.filter(tipo='BIENES').count()
+        kwargs['galeria'] = ComunidadEntry.objects.filter(tipo='FOTOS').count()
         return super(Landing, self).get_context_data(**kwargs)

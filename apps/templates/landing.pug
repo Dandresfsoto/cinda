@@ -43,7 +43,7 @@ body(data-spy="scroll", data-target="#header", data-offset="51")
                 div(class="collapse navbar-collapse", id="header-navbar")
                     ul(class="nav navbar-nav navbar-right")
                         li(class="nav-item")
-                            a(class="nav-link", href="#about", data-click="scroll-to-target") ABOUT
+                            a(class="nav-link", href="#about", data-click="scroll-to-target") QUIENES SOMOS
 
                         li(class="nav-item")
                             a(class="nav-link", href="#team", data-click="scroll-to-target") TEAM
@@ -75,39 +75,32 @@ body(data-spy="scroll", data-target="#header", data-offset="51")
 
         div(id="about", class="content", data-scrollview="true")
             div(class="container", data-animation="true", data-animation-type="fadeInDown")
-                h2(class="content-title") About Us
+                h2(class="content-title") Quienes somos?
                 p(class="content-desc")
-                    |Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consectetur eros dolor, sed bibendum turpis luctus eget
+                    |Acompañamos a población afrocolombiana e indígena para contribuir al desarrollo integral y recuperar las tradiciones propias mediante: acceso a alimentos para autoconsumo, promoción de iniciativas productivas y fortaleciendo el liderazgo y el empoderamiento de las comunidades.
 
                 div(class="row")
 
-                    div(class="col-md-4 col-sm-12")
+                    div(class="col-md-6 col-sm-12")
 
                         div(class="about")
-                            h3(class="mb-3") Our Story
+                            h3(class="mb-3") Que hacemos?
                             p.
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                Vestibulum posuere augue eget ante porttitor fringilla.
-                                Aliquam laoreet, sem eu dapibus congue, velit justo ullamcorper urna,
-                                non rutrum dolor risus non sapien. Vivamus vel tincidunt quam.
-                                Donec ultrices nisl ipsum, sed elementum ex dictum nec.
-
-                            p.
-                                In non libero at orci rutrum viverra at ac felis.
-                                Curabitur a efficitur libero, eu finibus quam.
-                                Pellentesque pretium ante vitae est molestie, ut faucibus tortor commodo.
-                                Donec gravida, eros ac pretium cursus, est erat dapibus quam,
-                                sit amet dapibus nisl magna sit amet orci.
+                                A través de IRACA® se realiza una intervención integral con enfoque
+                                diferencial con proyectos de seguridad alimentaria y fomento de
+                                prácticas productivas, que permite empoderar a las comunidades en
+                                su propio desarrollo. La población atendida son los hogares o
+                                comunidades étnicas indígenas y afrocolombianas.
 
 
-                    div(class="col-md-4 col-sm-12")
-                        h3(class="mb-3") Our Philosophy
+                    div(class="col-md-6 col-sm-12")
+                        h3(class="mb-3")
                         div(class="about-author")
                             div(class="quote")
                                 i(class="fa fa-quote-left")
-                                h3 We work harder,
+                                h3 Solo viendo hacia atras,
                                     br
-                                    span to let our user keep simple
+                                    span podremos seguir avanzando con esperanza.
                                 i(class="fa fa-quote-right")
                             div(class="author")
                                 div(class="image")
@@ -115,29 +108,6 @@ body(data-spy="scroll", data-target="#header", data-offset="51")
                                 div(class="info")
                                     |Sean Ngu
                                     small Front End Developer
-
-                    div(class="col-md-4 col-sm-12")
-                        h3(class="mb-3") Our Experience
-                        div(class="skills")
-                        div(class="skills-name") Front End
-                            div(class="progress mb-3")
-                                div(class="progress-bar progress-bar-striped progress-bar-animated bg-theme", style="width: 95%")
-                                    span(class="progress-number") 95%
-
-                        div(class="skills-name") Programming
-                            div(class="progress mb-3")
-                                div(class="progress-bar progress-bar-striped progress-bar-animated bg-theme", style="width: 90%")
-                                    span(class="progress-number") 90%
-
-                        div(class="skills-name") Database Design
-                            div(class="progress mb-3")
-                                div(class="progress-bar progress-bar-striped progress-bar-animated bg-theme", style="width: 85%")
-                                    span(class="progress-number") 85%
-
-                        div(class="skills-name") Wordpress
-                            div(class="progress mb-3")
-                                div(class="progress-bar progress-bar-striped progress-bar-animated bg-theme", style="width: 80%")
-                                    span(class="progress-number") 80%
 
 
         div(id="milestone", class="content bg-black-darker has-bg", data-scrollview="true")
@@ -152,28 +122,28 @@ body(data-spy="scroll", data-target="#header", data-offset="51")
 
                     div(class="col-md-3 milestone-col")
                         div(class="milestone")
-                            div(class="number", data-animation="true", data-animation-type="number", data-final-number="1292") 1,292
-                            div(class="title") Themes & Template
+                            div(class="number", data-animation="true", data-animation-type="number", data-final-number="{{usuarios_registrados}}") {{usuarios_registrados}}
+                            div(class="title") Usuarios registrados
 
 
 
                     div(class="col-md-3 milestone-col")
                         div(class="milestone")
-                            div(class="number", data-animation="true", data-animation-type="number", data-final-number="9039") 9,039
-                            div(class="title") Registered Members
+                            div(class="number", data-animation="true", data-animation-type="number", data-final-number="{{entradas}}") {{entradas}}
+                            div(class="title") Entradas
 
 
 
                     div(class="col-md-3 milestone-col")
                         div(class="milestone")
-                            div(class="number", data-animation="true", data-animation-type="number", data-final-number="89291") 89,291
-                            div(class="title") Items Sold
+                            div(class="number", data-animation="true", data-animation-type="number", data-final-number="{{servicios_ofrecidos}}") {{servicios_ofrecidos}}
+                            div(class="title") Servicios ofrecidos
 
 
                     div(class="col-md-3 milestone-col")
                         div(class="milestone")
-                            div(class="number", data-animation="true", data-animation-type="number", data-final-number="129") 129
-                            div(class="title") Theme Authors
+                            div(class="number", data-animation="true", data-animation-type="number", data-final-number="{{galeria}}") {{galeria}}
+                            div(class="title") Galerias fotograficas
 
         div(id="team", class="content", data-scrollview="true")
             div(class="container")
