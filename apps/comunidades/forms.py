@@ -28,6 +28,10 @@ class ComunidadEntryForm(forms.ModelForm):
                     'descripcion',
                     css_class="form-group col-lg-12"
                 ),
+                Column(
+                    'tipo',
+                    css_class="form-group col-lg-12"
+                ),
             ),
             ButtonHolder(
                 Submit(
@@ -40,7 +44,7 @@ class ComunidadEntryForm(forms.ModelForm):
 
     class Meta:
         model = ComunidadEntry
-        fields = ['nombre', 'photo', 'markdown', 'descripcion']
+        fields = ['nombre', 'photo', 'markdown', 'descripcion', 'tipo']
         labels = {
             'photo': 'Imagen'
         }
