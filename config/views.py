@@ -87,4 +87,5 @@ class Landing(TemplateView):
         kwargs['entradas'] = ComunidadEntry.objects.all().count()
         kwargs['servicios_ofrecidos'] = ComunidadEntry.objects.filter(tipo='BIENES').count()
         kwargs['galeria'] = ComunidadEntry.objects.filter(tipo='FOTOS').count()
+        kwargs['entradas_items'] = ComunidadEntry.objects.all()
         return super(Landing, self).get_context_data(**kwargs)

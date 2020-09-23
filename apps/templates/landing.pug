@@ -46,19 +46,11 @@ body(data-spy="scroll", data-target="#header", data-offset="51")
                             a(class="nav-link", href="#about", data-click="scroll-to-target") QUIENES SOMOS
 
                         li(class="nav-item")
-                            a(class="nav-link", href="#team", data-click="scroll-to-target") TEAM
+                            a(class="nav-link", href="#team", data-click="scroll-to-target") ALIADOS
 
                         li(class="nav-item")
-                            a(class="nav-link", href="#service", data-click="scroll-to-target") SERVICES
+                            a(class="nav-link", href="#work", data-click="scroll-to-target") ENTRADAS
 
-                        li(class="nav-item")
-                            a(class="nav-link", href="#work", data-click="scroll-to-target") WORK
-
-                        li(class="nav-item")
-                            a(class="nav-link", href="#client", data-click="scroll-to-target") CLIENT
-
-                        li(class="nav-item")
-                            a(class="nav-link", href="#contact", data-click="scroll-to-target") CONTACT
 
         div(id="home", class="content has-bg home")
             div(class="content-bg",style="background-image: url({% static 'assets/img/landing/bg-home.jpg'%});",
@@ -81,10 +73,10 @@ body(data-spy="scroll", data-target="#header", data-offset="51")
 
                 div(class="row")
 
-                    div(class="col-md-6 col-sm-12")
+                    div(class="col-md-12 col-sm-12")
 
                         div(class="about")
-                            h3(class="mb-3") Que hacemos?
+                            h2(class="content-title") Que hacemos?
                             p.
                                 A través de IRACA® se realiza una intervención integral con enfoque
                                 diferencial con proyectos de seguridad alimentaria y fomento de
@@ -93,21 +85,7 @@ body(data-spy="scroll", data-target="#header", data-offset="51")
                                 comunidades étnicas indígenas y afrocolombianas.
 
 
-                    div(class="col-md-6 col-sm-12")
-                        h3(class="mb-3")
-                        div(class="about-author")
-                            div(class="quote")
-                                i(class="fa fa-quote-left")
-                                h3 Solo viendo hacia atras,
-                                    br
-                                    span podremos seguir avanzando con esperanza.
-                                i(class="fa fa-quote-right")
-                            div(class="author")
-                                div(class="image")
-                                    img(src="{% static 'assets/img/landing/user-1.jpg'%}")
-                                div(class="info")
-                                    |Sean Ngu
-                                    small Front End Developer
+
 
 
         div(id="milestone", class="content bg-black-darker has-bg", data-scrollview="true")
@@ -147,155 +125,34 @@ body(data-spy="scroll", data-target="#header", data-offset="51")
 
         div(id="team", class="content", data-scrollview="true")
             div(class="container")
-                h2(class="content-title") Our Team
-                p(class="content-desc").
-                    Phasellus suscipit nisi hendrerit metus pharetra dignissim. Nullam nunc ante, viverra quis<br />
-                    ex non, porttitor iaculis nisi.
+                h2(class="content-title") Aliados estrategicos
+
 
                 div(class="row")
-                    div(class="col-md-4 col-sm-12")
+                    div(class="offset-md-2 col-md-4 col-sm-12")
                         div(class="team")
                             div(class="image", data-animation="true", data-animation-type="flipInX")
-                                img(src="{% static 'assets/img/landing/user-1.jpg'%}", alt="Ryan Teller")
+                                img(src="{% static 'assets/img/landing/prosperidad.png'%}", alt="Ryan Teller")
                             div(class="info")
-                                h3(class="name") Ryan Teller
-                                div(class="title text-primary") FOUNDER
-                                p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+                                h3(class="name") Prosperidad social
+                                div(class="title text-primary") Organismo del gobierno
+                                p Prosperidad Social es el organismo del Gobierno Nacional que busca fijar políticas, planes generales, programas y proyectos para la asistencia, atención y reparación a las víctimas de la violencia, la inclusión social, la atención a grupos vulnerables y su reintegración social y económica.
                                 div(class="social")
-                                    a(href="#")
-                                        i(class="fab fa-facebook-f fa-lg fa-fw")
-                                    a(href="#")
-                                        i(class="fab fa-twitter fa-lg fa-fw")
-                                    a(href="#")
-                                        i(class="fab fa-google-plus-g fa-lg fa-fw")
-
-                    div(class="col-md-4 col-sm-12")
-                        div(class="team")
-                            div(class="image", data-animation="true", data-animation-type="flipInX")
-                                img(src="{% static 'assets/img/landing/user-2.jpg'%}", alt="Jonny Cash")
-                            div(class="info")
-                                h3(class="name") Jonny Cash
-                                div(class="title text-primary") WEB DEVELOPER
-                                p Donec quam felis, ultricies nec, pellentesque eu sem. Nulla consequat massa vierra quis enim.
-                                div(class="social")
-                                    a(href="#")
-                                        i(class="fab fa-facebook-f fa-lg fa-fw")
-                                    a(href="#")
-                                        i(class="fab fa-twitter fa-lg fa-fw")
-                                    a(href="#")
-                                        i(class="fab fa-google-plus-g fa-lg fa-fw")
+                                    a(href="https://prosperidadsocial.gov.co/")
+                                        i(class="fas fa-code fa-lg fa-fw")
 
 
                     div(class="col-md-4 col-sm-12")
                         div(class="team")
                             div(class="image", data-animation="true", data-animation-type="flipInX")
-                                img(src="{% static 'assets/img/landing/user-3.jpg'%}", alt="Mia Donovan")
+                                img(src="{% static 'assets/img/landing/logo_iraca.png'%}", alt="Jonny Cash")
                             div(class="info")
-                                h3(class="name") Mia Donovan
-                                div(class="title text-primary") WEB DESIGNER
-                                p Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean ligula imperdiet.
+                                h3(class="name") IRACA
+                                div(class="title text-primary") Programa gubernamental
+                                p Acompañamos a población afrocolombiana e indígena para contribuir al desarrollo integral y recuperar las tradiciones propias mediante: acceso a alimentos para autoconsumo, promoción de iniciativas productivas y fortaleciendo el liderazgo y el empoderamiento de las comunidades.
                                 div(class="social")
-                                    a(href="#")
-                                        i(class="fab fa-facebook-f fa-lg fa-fw")
-                                    a(href="#")
-                                        i(class="fab fa-twitter fa-lg fa-fw")
-                                    a(href="#")
-                                        i(class="fab fa-google-plus-g fa-lg fa-fw")
-
-
-        div(id="quote", class="content bg-black-darker has-bg", data-scrollview="true")
-            div(class="content-bg" style="background-image: url({% static 'assets/img/landing/bg-quote.jpg'%})",
-                data-paroller-factor="0.5",
-                data-paroller-factor-md="0.01",
-                data-paroller-factor-xs="0.01")
-
-            div(class="container", data-animation="true", data-animation-type="fadeInLeft")
-                div(class="row")
-                    div(class="col-md-12 quote")
-                        i(class="fa fa-quote-left")
-                        | Passion leads to design, design leads to performance, <br /> performance leads to <span class="text-primary">success</span>!
-                        i(class="fa fa-quote-right")
-                        small Sean Themes, Developer Teams in Malaysia
-
-
-
-        div(id="service", class="content", data-scrollview="true")
-            div(class="container")
-                h2(class="content-title") Our Services
-                p(class="content-desc").
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consectetur eros dolor,<br /> sed bibendum turpis luctus eget
-
-                div(class="row")
-
-                    div(class="col-md-4 col-sm-12")
-                        div(class="service")
-                            div(class="icon" data-animation="true" data-animation-type="bounceIn")
-                                i(class="fa fa-cog")
-                            div(class="info")
-                                h4(class="title") Easy to Customize
-                                p(class="desc").
-                                    Duis in lorem placerat, iaculis nisi vitae, ultrices tortor. Vestibulum molestie ipsum nulla. Maecenas nec hendrerit eros, sit amet maximus leo.
-
-
-                    div(class="col-md-4 col-sm-12")
-                        div(class="service")
-                            div(class="icon" data-animation="true" data-animation-type="bounceIn")
-                                i(class="fa fa-paint-brush")
-                            div(class="info")
-                                h4(class="title") Clean & Careful Design
-                                p(class="desc").
-                                    Etiam nulla turpis, gravida et orci ac, viverra commodo ipsum. Donec nec mauris faucibus, congue nisi sit amet, lobortis arcu.
-
-
-
-                    div(class="col-md-4 col-sm-12")
-                        div(class="service")
-                            div(class="icon" data-animation="true" data-animation-type="bounceIn")
-                                i(class="fa fa-file")
-                            div(class="info")
-                                h4(class="title") Well Documented
-                                p(class="desc").
-                                    Ut vel laoreet tortor. Donec venenatis ex velit, eget bibendum purus accumsan cursus. Curabitur pulvinar iaculis diam.
-
-
-                div(class="row")
-
-
-                    div(class="col-md-4 col-sm-12")
-                        div(class="service")
-                            div(class="icon" data-animation="true" data-animation-type="bounceIn")
-                                i(class="fa fa-code")
-                            div(class="info")
-                                h4(class="title") Re-usable Code
-                                p(class="desc").
-                                    Aenean et elementum dui. Aenean massa enim, suscipit ut molestie quis, pretium sed orci. Ut faucibus egestas mattis.
-
-
-                    div(class="col-md-4 col-sm-12")
-                        div(class="service")
-                            div(class="icon" data-animation="true" data-animation-type="bounceIn")
-                                i(class="fa fa-shopping-cart")
-                            div(class="info")
-                                h4(class="title") Online Shop
-                                p(class="desc").
-                                    Quisque gravida metus in sollicitudin feugiat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-
-
-
-                    div(class="col-md-4 col-sm-12")
-                        div(class="service")
-                            div(class="icon" data-animation="true" data-animation-type="bounceIn")
-                                i(class="fa fa-heart")
-                            div(class="info")
-                                h4(class="title") Free Support
-                                p(class="desc").
-                                    Integer consectetur, massa id mattis tincidunt, sapien erat malesuada turpis, nec vehicula lacus felis nec libero. Fusce non lorem nisl.
-
-
-
-
-
-
+                                    a(href="https://prosperidadsocial.gov.co/sgpp/inclusion-productiva/iraca/#:~:text=La%20poblaci%C3%B3n%20atendida%20son%20los%20hogares%20o%20comunidades%20%C3%A9tnicas%20ind%C3%ADgenas%20y%20afrocolombianas.")
+                                        i(class="fas fa-code fa-lg fa-fw")
 
 
 
@@ -311,194 +168,38 @@ body(data-spy="scroll", data-target="#header", data-offset="51")
                     div(class="col-md-9 col-sm-9")
                         div(class="icon-large text-primary")
                             i(class="fa fa-binoculars")
-                        h3 CHECK OUT OUR ADMIN THEME!
-                        p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus faucibus magna eu lacinia eleifend.
+                        h3 CONOCE NUESTRAS NUEVAS ENTRADAS
 
                     div(class="col-md-3 col-sm-3")
-                        a(href="#", class="btn btn-outline-white btn-theme btn-block") Live Preview
-
-
+                        a(href="login", class="btn btn-outline-white btn-theme btn-block") Ingresar
 
 
 
         div(id="work", class="content", data-scrollview="true")
             div(class="container", data-animation="true", data-animation-type="fadeInDown")
-                h2(class="content-title") Our Latest Work
-                p(class="content-desc").
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consectetur eros dolor,<br />
-                    sed bibendum turpis luctus eget
+                h2(class="content-title") Ultimas entradas
+
 
                 div(class="row row-space-10")
+                    |{% for entrada in entradas_items %}
                     div(class="col-md-3 col-sm-6")
                         div(class="work")
                             div(class="image")
                                 a(href="#")
-                                    img(src="{% static 'assets/img/landing/work/work-img-1.jpg'%}", alt="Work 1")
+                                    img(src="{{ entrada.photo.url }}")
                             div(class="desc")
-                                span(class="desc-title") Aliquam molestie
-                                span(class="desc-text") Lorem ipsum dolor sit amet
+                                span(class="desc-title") {{ entrada.nombre }}
+                    |{% endfor %}
 
-                    div(class="col-md-3 col-sm-6")
-                        div(class="work")
-                            div(class="image")
-                                a(href="#")
-                                    img(src="{% static 'assets/img/landing/work/work-img-2.jpg'%}", alt="Work 2")
-                            div(class="desc")
-                                span(class="desc-title") Aliquam molestie
-                                span(class="desc-text") Lorem ipsum dolor sit amet
-
-                    div(class="col-md-3 col-sm-6")
-                        div(class="work")
-                            div(class="image")
-                                a(href="#")
-                                    img(src="{% static 'assets/img/landing/work/work-img-3.jpg'%}", alt="Work 3")
-                            div(class="desc")
-                                span(class="desc-title") Aliquam molestie
-                                span(class="desc-text") Lorem ipsum dolor sit amet
-
-
-                    div(class="col-md-3 col-sm-6")
-                        div(class="work")
-                            div(class="image")
-                                a(href="#")
-                                    img(src="{% static 'assets/img/landing/work/work-img-4.jpg'%}", alt="Work 4")
-                            div(class="desc")
-                                span(class="desc-title") Aliquam molestie
-                                span(class="desc-text") Lorem ipsum dolor sit amet
-
-
-                    div(class="col-md-3 col-sm-6")
-                        div(class="work")
-                            div(class="image")
-                                a(href="#")
-                                    img(src="{% static 'assets/img/landing/work/work-img-5.jpg'%}", alt="Work 5")
-                            div(class="desc")
-                                span(class="desc-title") Aliquam molestie
-                                span(class="desc-text") Lorem ipsum dolor sit amet
-
-
-                    div(class="col-md-3 col-sm-6")
-                        div(class="work")
-                            div(class="image")
-                                a(href="#")
-                                    img(src="{% static 'assets/img/landing/work/work-img-6.jpg'%}", alt="Work 6")
-                            div(class="desc")
-                                span(class="desc-title") Aliquam molestie
-                                span(class="desc-text") Lorem ipsum dolor sit amet
-
-
-                    div(class="col-md-3 col-sm-6")
-                        div(class="work")
-                            div(class="image")
-                                a(href="#")
-                                    img(src="{% static 'assets/img/landing/work/work-img-7.jpg'%}", alt="Work 7")
-                            div(class="desc")
-                                span(class="desc-title") Aliquam molestie
-                                span(class="desc-text") Lorem ipsum dolor sit amet
-
-                    div(class="col-md-3 col-sm-6")
-                        div(class="work")
-                            div(class="image")
-                                a(href="#")
-                                    img(src="{% static 'assets/img/landing/work/work-img-8.jpg'%}", alt="Work 8")
-                            div(class="desc")
-                                span(class="desc-title") Aliquam molestie
-                                span(class="desc-text") Lorem ipsum dolor sit amet
-
-        div(id="client", class="content has-bg bg-green", data-scrollview="true")
-            div(class="content-bg",style="background-image: url({% static 'assets/img/landing/bg-client.jpg'%})",
-                data-paroller-factor="0.5",
-                data-paroller-factor-md="0.01",
-                data-paroller-factor-xs="0.01")
-
-            div(class="container", data-animation="true", data-animation-type="fadeInUp")
-                h2(class="content-title") Our Client Testimonials
-                div(class="carousel testimonials slide", data-ride="carousel", id="testimonials")
-                    div(class="carousel-inner text-center")
-                        div(class="carousel-item active")
-                            blockquote
-                                i(class="fa fa-quote-left")
-                                | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce viverra, nulla ut interdum fringilla,<br /> urna massa cursus lectus, eget rutrum lectus neque non ex.
-                                i(class="fa fa-quote-right")
-                            div(class="name") —
-                                span(class="text-primary") Mark Doe
-                                | , Designer
-
-                        div(class="carousel-item")
-                            blockquote
-                                i(class="fa fa-quote-left")
-                                | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce viverra, nulla ut interdum fringilla,<br /> urna massa cursus lectus, eget rutrum lectus neque non ex.
-                                i(class="fa fa-quote-right")
-                            div(class="name") —
-                                span(class="text-primary") Mark Doe
-                                | , Designer
-
-                    ol(class="carousel-indicators m-b-0")
-                        li(data-target="#testimonials", data-slide-to="0", class="active")
-                        li(data-target="#testimonials", data-slide-to="1")
-
-
-        div(id="contact", class="content bg-silver-lighter", data-scrollview="true")
-            div(class="container")
-                h2(class="content-title") Contact Us
-                p(class="content-desc").
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consectetur eros dolor,<br />sed bibendum turpis luctus eget
-                div(class="row")
-                    div(class="col-lg-6", data-animation="true", data-animation-type="fadeInLeft")
-                        h3 If you have a project you would like to discuss, get in touch with us.
-                        p.
-                            Morbi interdum mollis sapien. Sed ac risus. Phasellus lacinia, magna a ullamcorper laoreet, lectus arcu pulvinar risus, vitae facilisis libero dolor a purus.
-                        p.
-                            <strong>SeanTheme Studio, Inc</strong><br />795 Folsom Ave, Suite 600<br />San Francisco, CA 94107<br />P: (123) 456-7890<br />
-
-                        p
-                            span(class="phone") +11 (0) 123 456 78
-                            br
-                            a(href="mailto:hello@emailaddress.com", class="text-primary") seanthemes@support.com
-
-                    div(class="col-lg-6 form-col", data-animation="true", data-animation-type="fadeInRight")
-                        form(class="form-horizontal")
-                            div(class="form-group row m-b-15")
-                                label(class="col-form-label col-md-3 text-md-right") Name <span class="text-primary">*</span>
-                                div(class="col-md-9")
-                                    input(type="text", class="form-control")
-
-                            div(class="form-group row m-b-15")
-                                label(class="col-form-label col-md-3 text-md-right") Email <span class="text-primary">*</span>
-                                div(class="col-md-9")
-                                    input(type="email", class="form-control")
-
-
-                            div(class="form-group row m-b-15")
-                                label(class="col-form-label col-md-3 text-md-right") Message <span class="text-primary">*</span>
-                                div(class="col-md-9")
-                                    textarea(rows="10", class="form-control")
-
-
-                            div(class="form-group row m-b-15")
-                                label(class="col-form-label col-md-3 text-md-right")
-                                div(class="col-md-9 text-left")
-                                    button(type="submit",class="btn btn-theme btn-primary btn-block") Send Message
 
 
         div(id="footer", class="footer")
             div(class="container")
                 div(class="footer-brand")
-                    div(class="footer-brand-logo")
-                    |Color Admin
+                    img(src="{% static 'assets/img/cinda.svg'%}", alt="Work 2", style="width:200px;")
 
                 p.
-                    &copy; Copyright Color Admin 2019 <br />An admin & front end theme with serious impact. Created by <a href="#">SeanTheme</a>
-
-                p(class="social-list")
-                    a(href="#")
-                        i(class="fab fa-facebook-f fa-fw")
-                    a(href="#")
-                        i(class="fab fa-instagram fa-fw")
-                    a(href="#")
-                        i(class="fab fa-twitter fa-fw")
-                    a(href="#")
-                        i(class="fab fa-google-plus-g fa-fw")
+                    &copy; Copyright Color Admin 2020
 
 
 // ================== BEGIN BASE JS ==================
