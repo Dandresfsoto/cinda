@@ -10,6 +10,22 @@ block content_generic_auth
             button(type="button",class="btn btn-success") Agregar entrada
 
     | {% endif %}
+
+    div(class="container-fluid content-row", style="margin-bottom:20px;")
+        div(class="row")
+            div(class="col-sm-12")
+                h3 Afros:
+            | {% for comunidad in main_afros %}
+            div(class="col-sm-12 col-md-6 col-xl-3")
+                div(class="card h-100", style="h")
+                    img(class="card-img-top", src="{{ comunidad.photo.url }}")
+                    div(class="card-body")
+                        h5(class="card-title mt-0") {{ comunidad.nombre }}
+                        p(class="card-text f-s-13") {{ comunidad.descripcion }}
+                        a(href="{% url 'comunidades:ver_comunidad' pk=comunidad.id %}", class="btn btn-sm btn-default") Ver
+                        a(href="{% url 'comunidades:editar_comunidad' pk=comunidad.id %}", class="btn btn-sm btn-default ml-2") Editar
+            | {% endfor %}
+
     div(class="container-fluid content-row", style="margin-bottom:20px;")
         div(class="row")
             div(class="col-sm-12")
@@ -28,8 +44,38 @@ block content_generic_auth
     div(class="container-fluid content-row", style="margin-bottom:20px;")
         div(class="row")
             div(class="col-sm-12")
+                h3 Indigenas:
+            | {% for comunidad in main_indigenas %}
+            div(class="col-sm-12 col-md-6 col-xl-3")
+                div(class="card h-100", style="h")
+                    img(class="card-img-top", src="{{ comunidad.photo.url }}")
+                    div(class="card-body")
+                        h5(class="card-title mt-0") {{ comunidad.nombre }}
+                        p(class="card-text f-s-13") {{ comunidad.descripcion }}
+                        a(href="{% url 'comunidades:ver_comunidad' pk=comunidad.id %}", class="btn btn-sm btn-default") Ver
+                        a(href="{% url 'comunidades:editar_comunidad' pk=comunidad.id %}", class="btn btn-sm btn-default ml-2") Editar
+            | {% endfor %}
+
+    div(class="container-fluid content-row", style="margin-bottom:20px;")
+        div(class="row")
+            div(class="col-sm-12")
                 h3 Comunidades Indigenas:
             | {% for comunidad in indigenas %}
+            div(class="col-sm-12 col-md-6 col-xl-3")
+                div(class="card h-100", style="h")
+                    img(class="card-img-top", src="{{ comunidad.photo.url }}")
+                    div(class="card-body")
+                        h5(class="card-title mt-0") {{ comunidad.nombre }}
+                        p(class="card-text f-s-13") {{ comunidad.descripcion }}
+                        a(href="{% url 'comunidades:ver_comunidad' pk=comunidad.id %}", class="btn btn-sm btn-default") Ver
+                        a(href="{% url 'comunidades:editar_comunidad' pk=comunidad.id %}", class="btn btn-sm btn-default ml-2") Editar
+            | {% endfor %}
+
+    div(class="container-fluid content-row", style="margin-bottom:20px;")
+        div(class="row")
+            div(class="col-sm-12")
+                h3 Mercados campesinos:
+            | {% for comunidad in mercado_campesino %}
             div(class="col-sm-12 col-md-6 col-xl-3")
                 div(class="card h-100", style="h")
                     img(class="card-img-top", src="{{ comunidad.photo.url }}")

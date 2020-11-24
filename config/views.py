@@ -81,12 +81,15 @@ class Index(LoginRequiredMixin, TemplateView):
         kwargs['options'] = self.request.user.has_perms(self.permissions.get('crear'))
         kwargs['crear_comunidad'] = reverse('comunidades:crear_comunidad')
         kwargs['afros'] = ComunidadEntry.objects.filter(tipo='AFROS')
+        kwargs['main_afros'] = ComunidadEntry.objects.filter(tipo='MAIN_AFROS')
         kwargs['indigenas'] = ComunidadEntry.objects.filter(tipo='INDIGENAS')
+        kwargs['main_indigenas'] = ComunidadEntry.objects.filter(tipo='MAIN_INDIGENAS')
         kwargs['costumbres'] = ComunidadEntry.objects.filter(tipo='COSTUMBRES')
         kwargs['cocina'] = ComunidadEntry.objects.filter(tipo='COCINA')
         kwargs['fotos'] = ComunidadEntry.objects.filter(tipo='FOTOS')
         kwargs['bienes'] = ComunidadEntry.objects.filter(tipo='BIENES')
         kwargs['medicina'] = ComunidadEntry.objects.filter(tipo='MEDICINA')
+        kwargs['mercado_campesino'] = ComunidadEntry.objects.filter(tipo='MERCADO_CAMPESINO')
         return super(Index, self).get_context_data(**kwargs)
 
 

@@ -18,13 +18,16 @@ class ComunidadEntry(models.Model):
     )
     markdown = models.TextField(blank=True, null=True)
     tipo = models.CharField(max_length=100, choices=[
-        ('AFROS','AFROS'),
-        ('INDIGENAS','INDIGENAS'),
+        ('MAIN_AFROS', 'AFROS'),
+        ('MAIN_INDIGENAS', 'INDIGENAS'),
+        ('AFROS','COMUNIDADES AFROS'),
+        ('INDIGENAS','COMUNIDADES INDIGENAS'),
         ('COSTUMBRES','COSTUMBRES'),
         ('COCINA','COCINA'),
         ('FOTOS','FOTOS'),
         ('BIENES','BIENES'),
-        ('MEDICINA','MEDICINA')
+        ('MEDICINA','MEDICINA'),
+        ('MERCADO_CAMPESINO','MERCADO CAMPESINO'),
     ])
     descripcion = models.TextField()
 
