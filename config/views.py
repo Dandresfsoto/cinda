@@ -11,6 +11,11 @@ from apps.users.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import HttpResponseRedirect, reverse, redirect
 from apps.comunidades.models import ComunidadEntry
+from rest_framework import mixins
+from rest_framework import generics
+from apps.comunidades.serializers import ImagenesSerializer
+from apps.comunidades.models import Imagenes
+from rest_framework.permissions import AllowAny
 
 
 class Login(FormView):
@@ -45,6 +50,15 @@ class Logout(View):
     def dispatch(self, request, *args, **kwargs):
         logout(request)
         return redirect(settings.LOGIN_URL)
+
+
+class LoadImagesAPI(mixins.CreateModelMixin, generics.GenericAPIView):
+    permission_classes = [AllowAny]
+    queryset = Imagenes.objects.all()
+    serializer_class = ImagenesSerializer
+
+    def post(self, request, *args, **kwargs):
+        return self.create(request, *args, **kwargs)
 
 
 class Index(LoginRequiredMixin, TemplateView):

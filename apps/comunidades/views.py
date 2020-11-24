@@ -8,6 +8,7 @@ from .forms import ComunidadEntryForm
 from .models import ComunidadEntry
 from config.utils import convert_dict_breadcrums
 from django.urls import reverse
+from django.middleware.csrf import get_token
 
 # Create your views here.
 
@@ -30,6 +31,7 @@ class CreateComunidades(LoginRequiredMixin,MultiplePermissionsRequiredMixin, Cre
 
     def get_context_data(self, **kwargs):
         kwargs['title'] = 'Nueva entrada'
+        kwargs['csrf_token'] = get_token(self.request)
         kwargs['title_panel'] = 'Agregar entrada'
         kwargs['breadcrumbs'] = convert_dict_breadcrums([
             ('Inicio', reverse('index')),

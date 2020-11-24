@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
-from .views import Index, Login, Logout, Landing
+from .views import Index, Login, Logout, Landing, LoadImagesAPI
 from django.conf.urls.static import static
 
 urlpatterns = [
@@ -25,6 +25,7 @@ urlpatterns = [
     path('login/', Login.as_view(), name='login'),
     path('logout/', Logout.as_view(), name='logout'),
     path('dashboard/', Index.as_view(), name='index'),
+    path('upload-images/', LoadImagesAPI.as_view(), name='load-images'),
     path('admin/', admin.site.urls),
     path('dashboard/usuarios/', include('apps.users.urls', namespace='users')),
     path('dashboard/comunidades/', include('apps.comunidades.urls', namespace='comunidades')),

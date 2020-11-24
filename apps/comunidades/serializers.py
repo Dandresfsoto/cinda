@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import ComunidadEntry
+from .models import ComunidadEntry, Imagenes
 
 
 class ComunidadEntrySerializer(serializers.ModelSerializer):
@@ -12,3 +12,10 @@ class ComunidadEntrySerializer(serializers.ModelSerializer):
 
     def get_html(self, obj):
         return obj.get_html()
+
+
+class ImagenesSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Imagenes
+        fields = ["file"]

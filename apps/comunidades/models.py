@@ -28,3 +28,15 @@ class ComunidadEntry(models.Model):
 
     def get_html(self):
         return markdown(self.markdown)
+
+
+def upload_dinamic_imagenes(instance, filename):
+    return '/'.join(['Imagenes', str(instance.id), filename])
+
+
+class Imagenes(models.Model):
+    file = ContentTypeRestrictedFileField(
+        upload_to=upload_dinamic_imagenes,
+        content_types=['image/jpg', 'image/jpeg', 'image/png'],
+        max_upload_size=1048576
+    )

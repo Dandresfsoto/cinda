@@ -20,6 +20,18 @@ block content_generic_auth
                     i(class="fa fa-minus")
         div(class="panel-body")
             | {% verbatim %}
+            div(id="app1")
+                |<div>
+                |<input type="file" id="file" ref="file" v-on:change="handleFileUpload()"/>
+                |</div>
+                |<div style="background:#eee;border-radius: 10px;padding: 10px;margin:20px 0px;">
+                |   <div v-for="(link, index) in links">
+                |       <p><span><strong>{{index+1}}: </strong></span> <a>{{link}}</a></p>
+                |   </div>
+                |</div>
+            | {% endverbatim %}
+
+            | {% verbatim %}
             div(id="app")
                 |<markdown-editor v-model="value" :options="options" height="62vh"></markdown-editor>
             | {% endverbatim %}
@@ -30,6 +42,42 @@ block content_generic_auth
 block generic_auth_script
 
     script(src="https://unpkg.com/v-markdown-editor/dist/v-markdown-editor.min.js", type="text/javascript")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js", type="text/javascript")
+
+    script.
+        const csrf_token = "{{csrf_token}}"
+        var app = new Vue({
+            el: '#app1',
+            data: {
+                url: "/upload-images/",
+                file: "",
+                csrf_token: csrf_token,
+                links: []
+            },
+            methods:{
+                handleFileUpload() {
+                    var self = this
+                    this.file = this.$refs.file.files[0];
+                    let formData = new FormData();
+                    formData.append('file', this.file);
+                    axios.post(this.url,
+                        formData,
+                        {
+                            headers: {
+                                'Content-Type': 'multipart/form-data',
+                                'X-CSRFToken': this.csrf_token
+                            }
+                        }
+                    ).then(function (response) {
+                        self.links.push(response.data.file)
+                    })
+                    .catch(function (response) {
+
+                    });
+                }
+            }
+        })
+
     script.
         var app = new Vue({
             el: '#app',
