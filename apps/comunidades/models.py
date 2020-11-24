@@ -1,6 +1,8 @@
 from django.db import models
 from config.extrafields import ContentTypeRestrictedFileField
 from markdown import markdown
+import random
+import string
 # Create your models here.
 
 def upload_dinamic_dir(instance, filename):
@@ -31,7 +33,9 @@ class ComunidadEntry(models.Model):
 
 
 def upload_dinamic_imagenes(instance, filename):
-    return '/'.join(['Imagenes', str(instance.id), filename])
+    chars = string.ascii_uppercase
+    random_str = ''.join(random.choice(chars) for _ in range(20))
+    return '/'.join(['Imagenes', random_str, filename])
 
 
 class Imagenes(models.Model):
