@@ -42,8 +42,8 @@ RUN apt-get update && apt-get install -y \
     --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
-RUN sudo pip3 install setuptools-rust
-RUN sudo pip3 install --upgrade pip
+RUN pip3 install setuptools-rust
+RUN pip3 install --upgrade pip
 
 # Requirements are installed here to ensure they will be cached.
 COPY ./requirements /requirements
